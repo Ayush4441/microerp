@@ -1,0 +1,131 @@
+<!--
+    The MIT License (MIT)
+
+    Copyright © 2025 Ayush Samantaray (@Ayush4441)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the “Software”), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is furnished
+    to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+    FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="900.0">
+
+    <!-- Top Bar -->
+    <top>
+        <VBox>
+            <HBox spacing="10" styleClass="top-bar" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="10" right="20" bottom="10" left="20"/>
+                </padding>
+                <children>
+                    <!-- Left: App Name -->
+                    <Label text="µ ERP" styleClass="app-name"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <!-- Right: User Info -->
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <children>
+                            <Label fx:id="usernameLabel" text="Username" styleClass="username-label"/>
+                            <ImageView fx:id="userIcon" fitHeight="32" fitWidth="32" pickOnBounds="true" preserveRatio="true"/>
+                            <MenuButton text="Options" styleClass="user-menu">
+                                <items>
+                                    <MenuItem text="Disconnect" fx:id="disconnectItem"/>
+                                    <MenuItem text="Logout" fx:id="logoutItem"/>
+                                </items>
+                            </MenuButton>
+                        </children>
+                    </HBox>
+                </children>
+            </HBox>
+
+            <!-- Separator Line -->
+            <Separator styleClass="separator-line"/>
+        </VBox>
+    </top>
+    
+    <!-- Main Content Area -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="content-scrollpane">
+            <content>
+                <VBox>
+                    <StackPane fx:id="pageContainer" styleClass="page-container"/>
+                    <!-- Dashboard -->
+                    <GridPane fx:id="dashboard" styleClass="card-grid" hgap="30" vgap="30" alignment="TOP_CENTER">
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20"/>
+                        </padding>
+
+                        <!-- Attendance Card -->
+                        <VBox styleClass="card" fx:id="attendanceCard" alignment="CENTER" spacing="15" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <children>
+                                <ImageView fitHeight="80" fitWidth="80"/>
+                                <Label text="Attendance" styleClass="card-title"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Grades Card -->
+                        <VBox styleClass="card" fx:id="gradesCard" alignment="CENTER" spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <children>
+                                <ImageView fitHeight="80" fitWidth="80"/>
+                                <Label text="Grades" styleClass="card-title"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Assignments Card -->
+                        <VBox styleClass="card" fx:id="assignmentsCard" alignment="CENTER" spacing="15" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <children>
+                                <ImageView fitHeight="80" fitWidth="80"/>
+                                <Label text="Assignments" styleClass="card-title"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Settings Card -->
+                        <VBox styleClass="card" fx:id="settingsCard" alignment="CENTER" spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <ImageView fitHeight="80" fitWidth="80"/>
+                                <Label text="Settings" styleClass="card-title"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Notification Card -->
+                        <VBox styleClass="card" fx:id="notificationCard" alignment="CENTER" spacing="15" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                            <children>
+                                <ImageView fitHeight="80" fitWidth="80"/>
+                                <Label text="Notification" styleClass="card-title"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Submission Card -->
+                        <VBox styleClass="card" fx:id="submissionCard" alignment="CENTER" spacing="15" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <children>
+                                <ImageView fitHeight="80" fitWidth="80"/>
+                                <Label text="Submission" styleClass="card-title"/>
+                            </children>
+                        </VBox>
+                    </GridPane>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
